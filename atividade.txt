@@ -1,0 +1,21 @@
+Levando em conta os dados em “json” que temos no arquivo “dados.js” crie uma API Rest
+implementando as rotas abaixo com suas devidas funcionalidades.
+1) Rota
+• http://localhost:3000/veiculo
+• Listar todos os veículos
+2) Rota
+• http://localhost:3000/montadora
+• Listar todas as montadoras
+3) Rota
+• http://localhost:3000/veiculo/id
+• Consultar um veículo por id
+4) Rota
+• http://localhost:3000/montadora/id
+• Consultar uma contadora por id
+5) Rota
+• http://localhost:3000/veiculo?montadora=id
+• Consultar todos os veículos de uma montadora
+6) Rota
+• http://localhost:3000/veiculo?search=parte_do_nome
+• Digitar parte de um nome ou nome todo para listar todos os veículos 
+compatíveis
