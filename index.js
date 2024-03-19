@@ -1,6 +1,6 @@
 import express from 'express';
 import { listarM, consultarPorIdM, consultarPorNomeM } from './service/montadoras.js';
-import { listarV, consultarPorIdV, consultarPorNomeV, consultarPorMontadoraV } from './service/veiculos.js';
+import { listarV, consultarPorIdV, consultarPorNomeV, consultarPorMontadoraV, consultarPorPaNomeV } from './service/veiculos.js';
 
 const app = express();
 
@@ -49,6 +49,20 @@ app.get('/veiculos/montadora/:id', (req, res) => {
         res.status(200).json(veiculosMontadora);
     } else {
         res.status(404).json({ "erro": "nenhum veículo encontrado para essa montadora" });
+    }
+});
+
+app.get('/veiculo', (req, res) => {
+    let searchTerm = req.query.search;
+    if (searchTerm) {
+        const result = consultarPorPaNomeV(searchTerm);
+        if (result.length > 0) {
+            res.status(200).json(result);
+        } else {
+            res.status(404).json({ "erro": "Nenhum veículo encontrado para a busca fornecida" });
+        }
+    } else {
+        res.status(400).json({ "erro": "Por favor, forneça um termo de busca válido" });
     }
 });
 

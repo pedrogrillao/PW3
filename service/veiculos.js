@@ -17,3 +17,8 @@ export const consultarPorNomeV = (modelo) => {
 export const consultarPorMontadoraV = (montadora) => {
     return veiculos.filter(veiculo => veiculo.montadora === montadora);
 }
+
+export const consultarPorPaNomeV = (modelo) => {
+    const searchLowerCase = modelo.toLowerCase();
+    return veiculos.filter(veiculo => veiculo.modelo.toLowerCase().includes(searchLowerCase));
+}
